@@ -26,14 +26,34 @@
 
 ---
 
+## 📸 데모 미리보기
+
+> 아래 이미지는 실제 앱의 화면 예시입니다.  
+<p align="center">
+  <img src="assets/images/screenshot01.PNG" alt="스프레드시트 데모 이미지" width="700" />
+</p>
+<p align="center">
+  <img src="assets/images/screenshot02.PNG" alt="스프레드시트 데모 이미지" width="700" />
+</p>
+<p align="center">
+  <img src="assets/images/screenshot03.PNG" alt="스프레드시트 데모 이미지" width="700" />
+</p>
+<p align="center">
+  <img src="assets/images/screenshot04.PNG" alt="스프레드시트 데모 이미지" width="700" />
+</p>
+
+---
+
 ## 🗂 프로젝트 구조
+
+```
 .
 ├── index.html # UI 구성 및 HTML 구조
 ├── css/
 │ └── style.css # 셀, 버튼, 레이아웃 등 스타일 정의
 └── js/
 └── script.js # 셀 로직, 선택 처리, Excel I/O 구현
-
+```
 ---
 
 ## 🛠 사용 기술 스택
