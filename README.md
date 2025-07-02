@@ -1,71 +1,83 @@
-# ? JavaScript ½ºÇÁ·¹µå½ÃÆ® À¥ ¾ÖÇÃ¸®ÄÉÀÌ¼Ç  
+# ðŸ“Š JavaScript Spreadsheet Web App  
+**From Learning to Real-World Implementation**
 
-ÀÌ ÇÁ·ÎÁ§Æ®´Â JavaScript ÇÐ½À ¿©Á¤À» ÅëÇØ ¾òÀº Áö½ÄµéÀ» ¹ÙÅÁÀ¸·Î ¿Ï¼ºÇÑ **À¥ ±â¹Ý ½ºÇÁ·¹µå½ÃÆ® ¾ÖÇÃ¸®ÄÉÀÌ¼Ç**ÀÔ´Ï´Ù.
-
----
-
-## ? ÁÖ¿ä ±â´É
-
-- ### ? Á÷°üÀûÀÎ ±×¸®µå UI  
-  ±ò²ûÇÏ°í ¹ÝÀÀ¼º ³ôÀº ½ºÇÁ·¹µå½ÃÆ® ±×¸®µå¸¦ ÅëÇØ µ¥ÀÌÅÍ¸¦ ¼Õ½±°Ô ÀÔ·ÂÇÏ°í ¼öÁ¤ÇÒ ¼ö ÀÖ½À´Ï´Ù.
-
-- ### ? ½º¸¶Æ® ¼¿ ÇÏÀÌ¶óÀÌÆ®
-  - ¼±ÅÃÇÑ ¼¿ÀÇ **Çà Çì´õ(¿ÞÂÊ)** ¹× **¿­ Çì´õ(»ó´Ü)**°¡ **»ê¶æÇÑ ÇÏ´Ã»ö**À¸·Î ÇÏÀÌ¶óÀÌÆ®µÇ¾î ÇöÀç À§Ä¡¸¦ ½±°Ô ÆÄ¾ÇÇÒ ¼ö ÀÖ½À´Ï´Ù.
-  - ¼±ÅÃµÈ ¼¿ÀÇ ÁÖ¼Ò(¿¹: `A1`)´Â È­¸é ÇÏ´Ü `Cell:` »óÅÂ Ç¥½ÃÁÙ¿¡ **½Ç½Ã°£ Ç¥½Ã**µË´Ï´Ù.
-
-- ### ? Excel ³»º¸³»±â (Export)
-  - "Export Spreadsheet" ¹öÆ° Å¬¸¯ ÇÑ ¹øÀ¸·Î ÇöÀç ½ÃÆ® µ¥ÀÌÅÍ¸¦ `.xlsx` ÆÄÀÏ·Î ÀúÀåÇÒ ¼ö ÀÖ½À´Ï´Ù.
-  - Google ½ºÇÁ·¹µå½ÃÆ®, MS Excel µî ´Ù¾çÇÑ ÇÁ·Î±×·¥°ú **¿Ïº®ÇÏ°Ô È£È¯**µË´Ï´Ù.
-
-- ### ? Excel °¡Á®¿À±â (Import)
-  - `.xlsx` ¶Ç´Â `.xls` ÆÄÀÏÀ» ¾Û¿¡ ºÒ·¯¿Í µ¥ÀÌÅÍ·Î ¹Ù·Î Àû¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù.
-  - Google ½ºÇÁ·¹µå½ÃÆ®¿¡¼­ ÀÛ¼ºÇÑ ÆÄÀÏµµ ¹®Á¦¾øÀÌ ºÒ·¯¿Ã ¼ö ÀÖ½À´Ï´Ù.
+ì´ í”„ë¡œì íŠ¸ëŠ” JavaScript í•™ìŠµì„ ì‹¤ìš©ì  ê²°ê³¼ë¬¼ë¡œ í™•ìž¥í•˜ì—¬ ë§Œë“  **ì›¹ ê¸°ë°˜ ìŠ¤í”„ë ˆë“œì‹œíŠ¸ ì• í”Œë¦¬ì¼€ì´ì…˜**ìž…ë‹ˆë‹¤. ë‹¨ìˆœí•œ ê¸°ëŠ¥ êµ¬í˜„ì„ ë„˜ì–´ì„œ, **ì‚¬ìš©ìž ê²½í—˜(UX)**ê³¼ **ë°ì´í„° ê´€ë¦¬ì˜ íš¨ìœ¨ì„±**ê¹Œì§€ ê³ ë ¤í•˜ì—¬ ì„¤ê³„Â·êµ¬í˜„ë˜ì—ˆìŠµë‹ˆë‹¤.
 
 ---
 
-## ?? ÇÁ·ÎÁ§Æ® ±¸Á¶
+## ðŸš€ ì£¼ìš” ê¸°ëŠ¥
+
+### âœ… ì§ê´€ì ì¸ ê·¸ë¦¬ë“œ UI  
+- ê¹”ë”í•˜ê³  ë°˜ì‘í˜•ì¸ **ì…€ ê¸°ë°˜ ìŠ¤í”„ë ˆë“œì‹œíŠ¸** ì œê³µ  
+- ë°ì´í„° ìž…ë ¥ ë° ìˆ˜ì •ì´ ì§ê´€ì ìœ¼ë¡œ ê°€ëŠ¥
+
+### ðŸŽ¯ ìŠ¤ë§ˆíŠ¸ ì…€ í•˜ì´ë¼ì´íŠ¸  
+- ì„ íƒëœ ì…€ì˜ **í–‰(ì¢Œì¸¡)** ë° **ì—´(ìƒë‹¨)** í—¤ë”ê°€  
+  ì‚°ëœ»í•œ **í•˜ëŠ˜ìƒ‰**ìœ¼ë¡œ ë™ì‹œì— ê°•ì¡°ë˜ì–´ ì‹œê°ì  í”¼ë“œë°± ì œê³µ  
+- í˜„ìž¬ ì„ íƒ ì…€ì˜ ì£¼ì†Œ (ì˜ˆ: `A1`)ë¥¼ **ì‹¤ì‹œê°„ ìƒíƒœ í‘œì‹œì¤„**ì—ì„œ í™•ì¸ ê°€ëŠ¥
+
+### ðŸ“¤ Excel ë‚´ë³´ë‚´ê¸° (`Export`)  
+- `Export Spreadsheet` ë²„íŠ¼ í´ë¦­ìœ¼ë¡œ í˜„ìž¬ ë°ì´í„°ë¥¼ `.xlsx` í˜•ì‹ìœ¼ë¡œ ì €ìž¥  
+- **Google ìŠ¤í”„ë ˆë“œì‹œíŠ¸, Excel ë“±ê³¼ ì™„ë²½ í˜¸í™˜**
+
+### ðŸ“¥ Excel ê°€ì ¸ì˜¤ê¸° (`Import`)  
+- `.xlsx` ë˜ëŠ” `.xls` íŒŒì¼ì„ **ì¦‰ì‹œ ë¶ˆëŸ¬ì˜¤ê¸°** ê°€ëŠ¥  
+- Google ìŠ¤í”„ë ˆë“œì‹œíŠ¸ì—ì„œ ìƒì„±ëœ íŒŒì¼ë„ ì™„ë²½í•˜ê²Œ í˜¸í™˜
+
+---
+
+## ðŸ—‚ í”„ë¡œì íŠ¸ êµ¬ì¡°
 .
-¦§¦¡¦¡ index.html # UI ±¸Á¶ Á¤ÀÇ
-¦§¦¡¦¡ css/
-¦¢ ¦¦¦¡¦¡ style.css # ·¹ÀÌ¾Æ¿ô ¹× ½ºÅ¸ÀÏ Á¤ÀÇ
-¦¦¦¡¦¡ js/
-¦¦¦¡¦¡ script.js # ±â´É ±¸Çö ¹× Excel ÀÔÃâ·Â Ã³¸®
+â”œâ”€â”€ index.html # UI êµ¬ì„± ë° HTML êµ¬ì¡°
+â”œâ”€â”€ css/
+â”‚ â””â”€â”€ style.css # ì…€, ë²„íŠ¼, ë ˆì´ì•„ì›ƒ ë“± ìŠ¤íƒ€ì¼ ì •ì˜
+â””â”€â”€ js/
+â””â”€â”€ script.js # ì…€ ë¡œì§, ì„ íƒ ì²˜ë¦¬, Excel I/O êµ¬í˜„
 
 ---
 
-## ? »ç¿ë ±â¼ú ½ºÅÃ
+## ðŸ›  ì‚¬ìš© ê¸°ìˆ  ìŠ¤íƒ
 
-- **HTML5** ? À¥ ÆäÀÌÁö ±¸Á¶ ¼³°è
-- **CSS3** ? ¹ÝÀÀÇü ÀÎÅÍÆäÀÌ½º ¹× ½ºÅ¸ÀÏ¸µ
-- **JavaScript (ES6+)** ? »ç¿ëÀÚ ÀÎÅÍ·¢¼Ç ¹× ·ÎÁ÷ Ã³¸®
-- **[SheetJS (js-xlsx)](https://sheetjs.com/)** ? Excel ÆÄÀÏ ÀÔÃâ·Â ¹× ÆÄ½Ì
-
----
-
-## ? ½ÃÀÛÇÏ´Â ¹æ¹ý
-
-1. **¾Û ½ÇÇà**  
-   ÇÁ·ÎÁ§Æ® Æú´õ¿¡¼­ `index.html` ÆÄÀÏÀ» ºê¶ó¿ìÀú·Î ¿­¾î ½ÇÇàÇÕ´Ï´Ù.  
-   (¡Ø VS Code »ç¿ëÀÚ¶ó¸é Live Server È®Àå ±â´É »ç¿ëÀ» ÃßÃµÇÕ´Ï´Ù.)
-
-2. **µ¥ÀÌÅÍ ÀÔ·Â ¹× ÆíÁý**  
-   ¼¿À» Å¬¸¯ÇÏ¿© µ¥ÀÌÅÍ¸¦ ÀÚÀ¯·Ó°Ô ÀÔ·ÂÇÏ°Å³ª ¼öÁ¤ÇÏ¼¼¿ä.
-
-3. **Excel·Î ³»º¸³»±â**  
-   `Export Spreadsheet` ¹öÆ°À» Å¬¸¯ÇÏ¸é `.xlsx` ÆÄÀÏÀÌ ´Ù¿î·ÎµåµË´Ï´Ù.
-
-4. **Excel¿¡¼­ °¡Á®¿À±â**  
-   `ÆÄÀÏ ¼±ÅÃ` ¹öÆ°À¸·Î ±âÁ¸ Excel ÆÄÀÏÀ» ºÒ·¯¿À°í µ¥ÀÌÅÍ¸¦ È®ÀÎÇÏ¼¼¿ä.
+| ê¸°ìˆ  | ì„¤ëª… |
+|------|------|
+| **HTML5** | êµ¬ì¡°í™”ëœ ì›¹ íŽ˜ì´ì§€ ì„¤ê³„ |
+| **CSS3** | ë°˜ì‘í˜• ìŠ¤íƒ€ì¼ë§ ë° ì‹œê° íš¨ê³¼ |
+| **JavaScript (ES6+)** | ì…€ ë¡œì§, ì‚¬ìš©ìž ì¸í„°ëž™ì…˜, ì´ë²¤íŠ¸ ì²˜ë¦¬ |
+| **[SheetJS (js-xlsx)](https://sheetjs.com/)** | Excel íŒŒì¼ ì½ê¸°/ì“°ê¸° ë° íŒŒì‹± ì²˜ë¦¬ |
 
 ---
 
-## ? ÇÁ·ÎÁ§Æ® ÀÇÀÇ
+## ðŸ“¦ ì‹œìž‘í•˜ëŠ” ë°©ë²•
 
-ÀÌ ¾ÖÇÃ¸®ÄÉÀÌ¼ÇÀº **ÇÁ·ÐÆ®¿£µå ÇÐ½À °á°ú¹°À» ½ÇÀü¿¡¼­ ±¸Çö**ÇÑ ÇÁ·ÎÁ§Æ®ÀÔ´Ï´Ù. JavaScript¸¦ ´Ü¼øÈ÷ ¹è¿ì´Â µ¥¼­ ³ª¾Æ°¡, ½ÇÁ¦ »ç¿ë °¡´ÉÇÑ À¥ µµ±¸¸¦ ¸¸µå´Â °æÇèÀ» ´ã¾Ò½À´Ï´Ù.
+1. **ì•± ì‹¤í–‰**  
+   í”„ë¡œì íŠ¸ í´ë” ë‚´ `index.html` íŒŒì¼ì„ ì›¹ ë¸Œë¼ìš°ì €ì—ì„œ ì—´ê¸°  
+   > ðŸ’¡ VS Code ì‚¬ìš©ìžëŠ” [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) í™•ìž¥ì„ ê¶Œìž¥í•©ë‹ˆë‹¤.
 
-> ? **¿©·¯ºÐÀÇ ÇÇµå¹éÀº ¾ðÁ¦³ª È¯¿µÇÕ´Ï´Ù.**  
-> ´õ ³ªÀº UX¿Í ±â´É °³¼±À» À§ÇÑ ÀÇ°ßÀ» ÀÚÀ¯·Ó°Ô ³ª´²ÁÖ¼¼¿ä.
+2. **ë°ì´í„° ì¡°ìž‘**  
+   ì…€ì„ í´ë¦­í•˜ì—¬ **ìž…ë ¥ ë˜ëŠ” ìˆ˜ì •**í•´ ë³´ì„¸ìš”.
+
+3. **Excel ë‚´ë³´ë‚´ê¸°**  
+   `Export Spreadsheet` ë²„íŠ¼ í´ë¦­ â†’ `.xlsx` íŒŒì¼ ë‹¤ìš´ë¡œë“œ
+
+4. **Excel ê°€ì ¸ì˜¤ê¸°**  
+   `íŒŒì¼ ì„ íƒ` ë²„íŠ¼ìœ¼ë¡œ Excel íŒŒì¼ ì—…ë¡œë“œ â†’ ìŠ¤í”„ë ˆë“œì‹œíŠ¸ì— ìžë™ ì ìš©
 
 ---
 
+## ðŸ’¡ í”„ë¡œì íŠ¸ ì˜ì˜
 
+> "ê¸°ìˆ ì„ ë°°ì› ë‹¤ë©´, ì´ì œ ì§ì ‘ ë§Œë“¤ì–´ ë³´ì„¸ìš”."
+
+ì´ í”„ë¡œì íŠ¸ëŠ” **JavaScript í•™ìŠµì˜ ê²°ê³¼ë¬¼**ì¼ ë¿ë§Œ ì•„ë‹ˆë¼, ì‹¤ì „ì—ì„œ ì ìš© ê°€ëŠ¥í•œ **í”„ë¡ íŠ¸ì—”ë“œ ì¸í„°ëž™í‹°ë¸Œ ë„êµ¬**ë¥¼ êµ¬í˜„í•œ ê²½í—˜ìž…ë‹ˆë‹¤.  
+UI/UX, ë¡œì§ ì²˜ë¦¬, íŒŒì¼ ìž…ì¶œë ¥ ë“± ì›¹ ê°œë°œ ì „ë°˜ì— ëŒ€í•œ **ì¢…í•©ì  ì´í•´ì™€ êµ¬í˜„ë ¥**ì„ ëª©í‘œë¡œ í–ˆìŠµë‹ˆë‹¤.
+
+---
+
+## ðŸ™Œ í”¼ë“œë°± & ê¸°ì—¬
+
+ì´ í”„ë¡œì íŠ¸ëŠ” ê³„ì†í•´ì„œ ë°œì „ ì¤‘ìž…ë‹ˆë‹¤.  
+ë” ë‚˜ì€ UX, ê¸°ëŠ¥ ê°œì„ , ë²„ê·¸ ìˆ˜ì • ë“±ì— ëŒ€í•œ ì œì•ˆì€ ì–¸ì œë“  í™˜ì˜í•©ë‹ˆë‹¤.
+
+> ðŸ“§ Issue ë“±ë¡ ë˜ëŠ” Pull Requestë¡œ ìžìœ ë¡­ê²Œ ì˜ê²¬ì„ ë‚˜ëˆ ì£¼ì„¸ìš”!
+
+---
