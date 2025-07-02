@@ -1,0 +1,24 @@
+# Ignore files and directories that should not be tracked by Git
+# This file is used to specify intentionally untracked files that Git should ignore
+
+# 빌드/배포 관련
+/dist/
+/build/
+
+# Node.js
+/node_modules/
+npm-debug.log
+yarn-error.log
+.pnp.*
+
+# 환경 변수
+.env
+
+# IDE 관련
+.vscode/
+.idea/
+*.iml
+
+# OS 관련
+.DS_Store
+Thumbs.db
