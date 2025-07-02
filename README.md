@@ -1,7 +1,6 @@
 # 📊 JavaScript Spreadsheet Web App  
-**From Learning to Real-World Implementation**
 
-이 프로젝트는 JavaScript 학습을 실용적 결과물로 확장하여 만든 **웹 기반 스프레드시트 애플리케이션**입니다. 단순한 기능 구현을 넘어서, **사용자 경험(UX)**과 **데이터 관리의 효율성**까지 고려하여 설계·구현되었습니다.
+이 프로젝트는 JavaScript 학습을 실용적 결과물로 확장하여 만든 **웹 기반 스프레드시트 애플리케이션**입니다. 
 
 ---
 
