@@ -8,8 +8,11 @@
 </head>
 <body>
     <button id="export-btn">Export Spreadsheet</button>
+    <input type="file" id="excel-file-input" accept=".xlsx, .xls">
+    <!-- <button id="import-btn">Import Spreadsheet</button> -->
     <div>Cell: <span id="cell-status"></span></div>
     <div id="spreadsheet-container"></div>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
