@@ -74,35 +74,42 @@ function exportCSV() {
     a.click()
 }
 
-excelFileInput.onclick = function (e) {
-
+excelFileInput.addEventListener("change", function (e) {
     const file = e.target.files[0];
+
+    // 중요: 파일이 제대로 선택되었는지 확인하는 로직 추가
+    if (!file) {
+        console.log("선택된 파일이 없습니다.");
+        return; // 파일이 없으면 함수 종료
+    }
 
     const reader = new FileReader();
     reader.onload = function (event) {
-        const data = event.target.result;
-        const workbook = XLSX.read(data, { type: 'binary' });
-        const firstSheetName = workbook.SheetNames[0];
-        const worksheet = workbook.Sheets[firstSheetName];
-        const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+        try {
+            const data = event.target.result;
+            const workbook = XLSX.read(data, { type: 'binary' });
+            const firstSheetName = workbook.SheetNames[0];
+            const worksheet = workbook.Sheets[firstSheetName];
+            // XLSX_HEADER_OPTION 상수가 정의되어 있다고 가정합니다.
+            // 만약 정의되어 있지 않다면, 원래처럼 { header: 1 }을 사용하세요.
+            const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
 
-        console.log("jsonData: ", jsonData);
+            console.log("jsonData: ", jsonData);
 
-        createCellFromJson(jsonData);
-
-        drawSheet();
+            createCellFromJson(jsonData);
+            drawSheet();
+        } catch (error) {
+            console.error("파일 처리 중 오류 발생:", error);
+            alert("파일을 처리하는 중 오류가 발생했습니다. 다시 시도해 주세요.");
+        }
     };
     reader.onerror = function (error) {
-        console.error("Error reading file:", error);
-        alert("Failed to read the file. Please try again.");
+        console.error("파일 읽기 중 오류 발생:", error);
+        alert("파일을 읽는 데 실패했습니다. 다시 시도해 주세요.");
     };
 
     reader.readAsBinaryString(file);
-    // console.log("csv: ", csv);
-
-
-
-}
+});
 
 
 initSpreadSheet();
@@ -184,10 +191,10 @@ function createCellFromJson(data) {
                 isHeader = true;
                 disabled = true;
             } else { // 일반 데이터 셀 - jsonData에서 데이터 가져오기
+                
                 // jsonData의 인덱스는 헤더를 포함하지 않으므로, i-1, j-1로 접근해야 할 수 있습니다.
-                // sheet_to_json({header: 1})은 첫 행을 데이터로 포함하므로, 인덱스 i, j 그대로 사용합니다.
-                if (data[i] && data[i][j]) { // 데이터 존재 여부 확인
-                    cellData = data[i][j];
+                if (data[i-1] && data[i-1][j-1]) { // 데이터 존재 여부 확인
+                    cellData = data[i-1][j-1];
                 } else {
                     cellData = "";
                 }
